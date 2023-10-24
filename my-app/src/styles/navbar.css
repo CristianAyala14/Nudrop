@@ -1,0 +1,53 @@
+.nav{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 1rem;
+    font-size: 1.7rem;
+    text-decoration: none;
+    background-color: rgb(0, 0, 0);
+    height: 4rem;
+}
+.nav-list{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 5rem
+}
+a{
+    text-decoration: none;
+}
+.nav-img-logo{
+    padding-top: 1rem;
+    width: 10rem;
+    height: 3rem;
+}
+.nav-option{
+    color: rgb(221, 221, 230);
+
+}
+.nav-option:hover{
+    color: wheat;
+
+}
+.active{
+    text-decoration: none;
+    color: wheat;
+    font-size: 2rem;
+    transition: font-size 0.7s;
+}
+.btn-click{
+    font-size: 2rem;
+    width: 10rem;
+    background-color: black;
+    border: none;
+
+}
+.btn-click i{
+    color: wheat;
+    font-size: 1.5rem;
+}

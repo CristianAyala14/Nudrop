@@ -1,0 +1,21 @@
+.image-container {
+    width: 100%;
+    overflow-x: scroll;
+}
+.image-gallery {
+    display: flex; 
+    white-space: nowrap; 
+    padding: 1rem;
+}
+.imgs-gallery {
+    width: auto;
+    height: 33rem;
+    margin: 3rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 1rem;
+}
+.imgs-gallery:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 2rem 1rem rgba(230, 222, 216, 0.2); /* Agrega un efecto de sombra brillante en hover */
+}

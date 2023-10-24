@@ -1,0 +1,30 @@
+.label-filter{
+    color: bisque;
+    margin-inline: 2rem ;
+    font-size: 1.5rem;
+}
+
+/* Cambia el estilo del selector */
+.select-gallery {
+    background-color: #887760; /* Color de fondo */
+    border: 0;
+    border-radius: 5px; /* Borde redondeado */
+    padding: 8px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    color: #333; /* Color del texto */
+    cursor: pointer;
+}
+.select-gallery:hover{
+    box-shadow: 0 0 2rem 1rem rgba(230, 222, 216, 0.2);
+}
+
+
+.option-gallery{
+    background-color: #8b6847; 
+    color: #beb3b3; 
+}
+
+select option:hover {
+    background-color: #ddd; 
+    color: #ada1a1; 
+}

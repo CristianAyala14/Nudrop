@@ -1,0 +1,21 @@
+.carousel{
+    height: 30rem;
+    background-color: rgb(48, 110, 161);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    transition: background-image 2s ease-in-out;
+}
+.img-slider{
+    height: 100%;
+    width: 100%;
+}
+.img-slider-img{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
