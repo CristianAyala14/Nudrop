@@ -36,13 +36,13 @@ const Carousel = () => {
     return (
         <div>
             <div className="carousel" style={{ backgroundImage: `url(${ImgCarroucel[currentIndex]})`, backgroundPosition: 'center'}}>
-                {/* <button className="slider-btn-left" onClick={prevSlide}>
+                <button className="slider-btn-left" onClick={prevSlide}>
                     <i className="fa-solid fa-angles-left"></i>
                 </button>
                 
                 <button className="slider-btn-right" onClick={nextSlide}>
                     <i className="fa-solid fa-angles-right"></i>
-                </button> */}
+                </button> 
             </div>
         </div>
     )

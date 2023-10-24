@@ -8,7 +8,6 @@ function FilterOptions({filter, setFilter}){
     return(
         <div>
             <select className="select-gallery" id="filter" value={filter} onChange={handleFilterChange}>
-                <option className="option-gallery"  value="todas">Todas</option>
                 <option className="option-gallery" value="grupal">Grupo</option>
                 <option className="option-gallery" value="cantante">Cantante</option>
                 <option className="option-gallery" value="bajista">Bajista</option>

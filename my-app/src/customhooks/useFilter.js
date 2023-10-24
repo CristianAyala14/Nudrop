@@ -1,11 +1,10 @@
+//funciona solo para filtrar galeria.
 import { useState } from "react";
 
 function useFilter(initialstate="todas"){
     const[filter, setFilter]=useState(initialstate)
     function applyFilter(ImgGalery){
         switch (filter) {
-            case "todas":
-                return ImgGalery;
             case "grupal":
                 return ImgGalery.filter((imgs) => imgs.grupal);
             case "cantante":
@@ -19,7 +18,7 @@ function useFilter(initialstate="todas"){
             case "baterista":
                 return ImgGalery.filter((imgs) => imgs.baterista);
             default:
-                return ImgGalery;
+                return ImgGalery.filter((imgs) => imgs.grupal);
         }
     };
     return {filter, setFilter, applyFilter};
