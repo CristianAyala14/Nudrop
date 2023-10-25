@@ -1,13 +1,24 @@
 import { NavLink } from 'react-router-dom';
 import '../styles/navbar.css';
 import { useState } from 'react'; 
+import GreenBtn from "../components/green-btn"
+import Redbtn from './red-btn';
 
-function Navbar( { allProducts, setAllproducts, img, op1, op2, op3, op4 }){
+
+function Navbar( {total,setTotal, countProducts, setCountProducts, allProducts, setAllProducts, img, op1, op2, op3, op4 }){
     const [Active, setActive] = useState(false);
     const changeActiveState = () => {
         setActive(!Active);
-        console.log("active changed")
     };
+
+    function Deletefromcart(product){
+        const newrestProducts = allProducts.filter((item)=>item.id !==product.id)
+        setAllProducts(newrestProducts)
+        setTotal(total - product.precio * product.cantidad )
+        setCountProducts(countProducts - product.cantidad)
+    }
+  
+
 
     return (
         <nav className='nav'>
@@ -18,30 +29,45 @@ function Navbar( { allProducts, setAllproducts, img, op1, op2, op3, op4 }){
                 <li><NavLink className="nav-option" to={`/Contact`}>{op3}</NavLink></li>
                 <li><NavLink className="nav-option" to={`/Store`}>{op4}</NavLink></li>
             </ul>
-            <button className='btn-click' onClick={changeActiveState}><i class="fa-solid fa-cart-shopping"></i></button>
+            <button className='btn-click' onClick={changeActiveState}><i class="fa-solid fa-cart-shopping">{countProducts}</i></button>
             
             
-            <div className={`visual-cart ${Active? "" : "hidden"}`}> 
-                {allProducts && allProducts.length ? (
+            <div className={`visual-cart ${Active? "" : "hidden"}`}>                              
+                {allProducts.length ? (
                     <>
-                    {allProducts.map((producto) => (
-                    <article key={producto.id} className='product'>
-                        <img className='product-img' src={producto.imagen} alt="" />
-                        <div className='name-to-description'>
-                            <h1 className='product-name'>{producto.nombre}</h1>
-                            <p className='product-description'>{producto.descripcion}</p>
+                        <div className="items-added-1">
+                            <>
+                            {allProducts.map((producto) => (
+                                <article className="item-cart">
+                                    <div>
+                                        <p>{producto.nombre}</p>
+                                        <p>{producto.precio}</p>
+                                        <p>x{producto.cantidad}</p>
+                                    </div>
+                                    <div>
+                                        <Redbtn onClick={() => Deletefromcart(producto)} btnContent="X"/>
+                                    </div>  
+                                </article>
+                            ))} 
+                            </>  
                         </div>
-                        <div className='price-to-btn'>
-                            <p>{producto.precio}</p>
-                            <button className='product-btn'><i className='btn-icon' class="fa-solid fa-cart-plus"></i></button>
+                        <div className="items-added-2">
+                            <div className="total-cart">
+                                <p>Total:</p>
+                                <p>${total}</p>
+                            </div>
+                            <div className="btn-comprar-container">
+                                <GreenBtn btnContent="Comprar"/>
+                            </div>
                         </div>
-                    </article>
-                    ))} 
                     </>
-                ) : (<p>Carrito vacío</p>)
-                }               
+                ) : (<p>Carrito vacío.</p>)} 
+                                    
             </div>
         </nav>
     )
 }
+
 export default Navbar;
+
+            

@@ -1,0 +1,12 @@
+.product-btn{
+    font-size: 1.5rem;
+    border-radius: 3rem;
+    padding: 0.4rem;
+    border: 0px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.product-btn:hover{
+    transform: scale(1.07);
+    background-color: rgb(55, 173, 65);
+}

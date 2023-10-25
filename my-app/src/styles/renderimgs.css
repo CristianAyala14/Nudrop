@@ -9,13 +9,27 @@
 }
 .imgs-gallery {
     width: auto;
-    height: 33rem;
-    margin: 3rem;
-    cursor: pointer;
+    height: 25rem;
+    margin: 2.3rem;
     transition: transform 0.2s, box-shadow 0.2s;
     border-radius: 1rem;
 }
 .imgs-gallery:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 2rem 1rem rgba(230, 222, 216, 0.2); /* Agrega un efecto de sombra brillante en hover */
+    box-shadow: 0 0 2rem 0.5rem rgb(150, 127, 102); 
 }
+
+
+::-webkit-scrollbar {
+    width: 7px; /* Ancho de la barra de desplazamiento */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0); 
+  }
+  
+  /* Estilos para la barra de desplazamiento horizontal (opcional) */
+  ::-webkit-scrollbar-thumb:horizontal {
+    background: rgb(150, 127, 102); 
+  }
+  

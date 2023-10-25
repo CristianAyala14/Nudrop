@@ -17,10 +17,7 @@ import Imglogo from "./img/nav-logo.jpeg"
 function App() {
   //ecommerce
   const [allProducts, setAllProducts] = useState([]);
-  function addToCart(product){
-    setAllProducts([...allProducts, product]);
-  };
-  const [total, setTotal] = useState(0) //estado para sumar total
+  const [total, setTotal] = useState(0); //estado para sumar total
   const [countProducts, setCountProducts] = useState(0); // estado contador de productos
   
   
@@ -30,14 +27,21 @@ function App() {
       <div className='App'>
         <Navbar img={Imglogo} op1="News" op2="Media" op3="Contact" op4="Store"
         allProducts={allProducts}
+        setAllProducts={setAllProducts}
+        countProducts={countProducts}
+        setCountProducts={setCountProducts}
+        total={total}
+        setTotal={setTotal}
         />
         <Routes>
           <Route exact path="/Home" element={<Home />} />
           <Route exact path="/News" element={<News/>} />
           <Route exact path="/Media" element={<Media />} />
           <Route exact path="/Contact" element={<Contact />} />
-          <Route exact path="/Store" element={<Store addToCart={addToCart} />} />
-        </Routes>
+          <Route exact path="/Store" element={<Store 
+          allProducts={allProducts} setAllProducts={setAllProducts} total={total} setTotal={setTotal} countProducts={countProducts} setCountProducts={setCountProducts}
+          />} />
+          </Routes>
         <Footer/>
       </div> 
     </BrowserRouter>

@@ -6,10 +6,10 @@ function Media(){
     return (
         <div className="media-container">
             <Carousel/>
+            <Galeria/>
             <div className="record-videos">
                 
             </div>
-            <Galeria/>
         </div>
     )
 }
