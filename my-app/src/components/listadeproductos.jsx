@@ -1,7 +1,10 @@
 import React from 'react'
 import "../styles/listadeproductos.css"
 import productos from "../mocks/productos_store"
-const ListaDeProductos = () => {
+import { useState } from 'react';
+
+function ListaDeProductos({ addToCart }){
+
 
   return (
     <div className="products-container">
@@ -14,7 +17,7 @@ const ListaDeProductos = () => {
             </div>
             <div className='price-to-btn'>
                 <p>{producto.precio}</p>
-                <button className='product-btn'><i className='btn-icon' class="fa-solid fa-cart-plus"></i></button>
+                <button className='product-btn' onClick={() => addToCart(producto)}><i className='btn-icon' class="fa-solid fa-cart-plus"></i></button>
             </div>
         </article>
     ))} 

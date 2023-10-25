@@ -45,9 +45,25 @@ a{
     width: 10rem;
     background-color: black;
     border: none;
+    cursor: pointer;
 
 }
 .btn-click i{
     color: wheat;
     font-size: 1.5rem;
+}
+
+/* visual cart */
+.visual-cart{
+    height: 20rem;
+    width: 20rem;
+    background-color: brown;
+    border: 1px solid black;
+    position: absolute;
+    top: 4rem;
+    right: 5rem;
+}
+.hidden{
+    display: none;
+
 }
