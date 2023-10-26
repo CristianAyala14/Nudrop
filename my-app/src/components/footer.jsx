@@ -13,9 +13,9 @@ const Footer = () => {
             </div>
             <div className='social'>
                 <ul>
-                    <li><a href="https://open.spotify.com/intl-es/artist/5ayg570AV7uZJ67UVgNazU"><i class="fa-brands fa-spotify"></i></a></li>
-                    <li><a href="https://open.spotify.com/intl-es/artist/5ayg570AV7uZJ67UVgNazU"><i class="fa-brands fa-square-instagram"></i></a></li>
-                    <li><a href="https://www.facebook.com/nudropoficial/"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li><a href="https://open.spotify.com/intl-es/artist/5ayg570AV7uZJ67UVgNazU"><i className="fa-brands fa-spotify"></i></a></li>
+                    <li><a href="https://open.spotify.com/intl-es/artist/5ayg570AV7uZJ67UVgNazU"><i className="fa-brands fa-square-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/nudropoficial/"><i className="fa-brands fa-square-facebook"></i></a></li>
                 </ul>
             </div>
         </div>

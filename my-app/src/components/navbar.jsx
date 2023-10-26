@@ -29,7 +29,7 @@ function Navbar( {total,setTotal, countProducts, setCountProducts, allProducts, 
                 <li><NavLink className="nav-option" to={`/Contact`}>{op3}</NavLink></li>
                 <li><NavLink className="nav-option" to={`/Store`}>{op4}</NavLink></li>
             </ul>
-            <button className='btn-click' onClick={changeActiveState}><i class="fa-solid fa-cart-shopping">{countProducts}</i></button>
+            <button className='btn-click' onClick={changeActiveState}><i className="fa-solid fa-cart-shopping">{countProducts}</i></button>
             
             
             <div className={`visual-cart ${Active? "" : "hidden"}`}>                              

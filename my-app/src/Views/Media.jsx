@@ -7,9 +7,9 @@ function Media(){
         <div className="media-container">
             <Carousel/>
             <Galeria/>
-            <div className="record-videos">
+            {/* <div className="record-videos">
                 
-            </div>
+            </div> */}
         </div>
     )
 }

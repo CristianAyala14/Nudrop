@@ -11,6 +11,7 @@ import News from "./Views/News"
 import Media from "./Views/Media"
 import Contact from "./Views/Contact"
 import Store from "./Views/Store"
+import Descripcionproducto from './Views/descripcionproducto';
 //img
 import Imglogo from "./img/nav-logo.jpeg"
 
@@ -41,6 +42,7 @@ function App() {
           <Route exact path="/Store" element={<Store 
           allProducts={allProducts} setAllProducts={setAllProducts} total={total} setTotal={setTotal} countProducts={countProducts} setCountProducts={setCountProducts}
           />} />
+          <Route path="/producto/:id" element={<Descripcionproducto/>} />
           </Routes>
         <Footer/>
       </div> 
