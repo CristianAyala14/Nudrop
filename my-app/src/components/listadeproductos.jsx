@@ -1,25 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "../styles/listadeproductos.css"
 import productos from "../mocks/productos_store"
 import { Link } from 'react-router-dom';
 import GreenBtn from "../components/green-btn"
-function ListaDeProductos({ allProducts, setAllProducts, total, setTotal, countProducts, setCountProducts}){
+import {ecommerce_context} from "../App"
+
+
+
+function ListaDeProductos(){
+  const context = useContext(ecommerce_context)
+  console.log(context)
+
   //add
   function addToCart(product){
 
-    if(allProducts.find((el)=>el.id===product.id)){
-      const newallProducts =  allProducts.map((item)=>item.id===product.id?
+    if(context.allProducts.find((el)=>el.id===product.id)){
+      const newallProducts =  context.allProducts.map((item)=>item.id===product.id?
       {...item, cantidad: item.cantidad + 1} : item )
-      setTotal(total+ product.precio * product.cantidad )
-      setCountProducts(countProducts + product.cantidad)
-      return setAllProducts([...newallProducts]) 
+      context.setTotal(context.total+ product.precio * product.cantidad )
+      context.setCountProducts(context.countProducts + product.cantidad)
+      return context.setAllProducts([...newallProducts]) 
     };
 
-    setTotal(total+ product.precio * product.cantidad )
-    setCountProducts(countProducts + product.cantidad)
+    context.setTotal(context.total+ product.precio * product.cantidad )
+    context.setCountProducts(context.countProducts + product.cantidad)
 
-    if(allProducts.length<6){
-      setAllProducts([...allProducts, product])
+    if(context.allProducts.length<6){
+      context.setAllProducts([...context.allProducts, product])
     }else{
       alert("No podes agregar mas en esta compra.")
     }
@@ -41,10 +48,6 @@ function ListaDeProductos({ allProducts, setAllProducts, total, setTotal, countP
               <GreenBtn btnContent={<i className="fa-solid fa-cart-plus btn-icon"></i>} onClick={() => addToCart(producto)}/>
           </div>
         </article>      
-
-
-
-
         
     ))} 
     

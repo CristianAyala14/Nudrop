@@ -1,23 +1,29 @@
 import { NavLink } from 'react-router-dom';
 import '../styles/navbar.css';
-import { useState } from 'react'; 
+import {  useContext ,useState } from 'react'; 
 import GreenBtn from "../components/green-btn"
 import Redbtn from './red-btn';
+import {ecommerce_context} from "../App"
 
 
-function Navbar( {total,setTotal, countProducts, setCountProducts, allProducts, setAllProducts, img, op1, op2, op3, op4 }){
+
+function Navbar( {img, op1, op2, op3, op4 }){
+    const context = useContext(ecommerce_context)
+    
+
+
     const [Active, setActive] = useState(false);
     const changeActiveState = () => {
         setActive(!Active);
     };
 
     function Deletefromcart(product){
-        const newrestProducts = allProducts.filter((item)=>item.id !==product.id)
-        setAllProducts(newrestProducts)
-        setTotal(total - product.precio * product.cantidad )
-        setCountProducts(countProducts - product.cantidad)
+        const newrestProducts = context.allProducts.filter((item)=>item.id !==product.id)
+        context.setAllProducts(newrestProducts)
+        context.setTotal(context.total - product.precio * product.cantidad )
+        context.setCountProducts(context.countProducts - product.cantidad)
     }
-  
+
 
 
     return (
@@ -29,15 +35,15 @@ function Navbar( {total,setTotal, countProducts, setCountProducts, allProducts, 
                 <li><NavLink className="nav-option" to={`/Contact`}>{op3}</NavLink></li>
                 <li><NavLink className="nav-option" to={`/Store`}>{op4}</NavLink></li>
             </ul>
-            <button className='btn-click' onClick={changeActiveState}><i className="fa-solid fa-cart-shopping">{countProducts}</i></button>
+            <button className='btn-click' onClick={changeActiveState}><i className="fa-solid fa-cart-shopping">{context.countProducts}</i></button>
             
             
             <div className={`visual-cart ${Active? "" : "hidden"}`}>                              
-                {allProducts.length ? (
+                {context.allProducts.length ? (
                     <>
                         <div className="items-added-1">
                             <>
-                            {allProducts.map((producto) => (
+                            {context.allProducts.map((producto) => (
                                 <article className="item-cart">
                                     <div>
                                         <p>{producto.nombre}</p>
@@ -54,7 +60,7 @@ function Navbar( {total,setTotal, countProducts, setCountProducts, allProducts, 
                         <div className="items-added-2">
                             <div className="total-cart">
                                 <p>Total:</p>
-                                <p>${total}</p>
+                                <p>${context.total}</p>
                             </div>
                             <div className="btn-comprar-container">
                                 <GreenBtn btnContent="Comprar"/>
