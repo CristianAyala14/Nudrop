@@ -5,9 +5,6 @@ import { Link } from 'react-router-dom';
 import GreenBtn from "../components/green-btn"
 import {ecommerce_context} from "../context/cartContext"
 
-
-
-
 function ListaDeProductos(){
   const {addToCart} = useContext(ecommerce_context)
   
