@@ -3,35 +3,14 @@ import "../styles/listadeproductos.css"
 import productos from "../mocks/productos_store"
 import { Link } from 'react-router-dom';
 import GreenBtn from "../components/green-btn"
-import {ecommerce_context} from "../App"
+import {ecommerce_context} from "../context/cartContext"
+
 
 
 
 function ListaDeProductos(){
-  const context = useContext(ecommerce_context)
-  console.log(context)
-
-  //add
-  function addToCart(product){
-
-    if(context.allProducts.find((el)=>el.id===product.id)){
-      const newallProducts =  context.allProducts.map((item)=>item.id===product.id?
-      {...item, cantidad: item.cantidad + 1} : item )
-      context.setTotal(context.total+ product.precio * product.cantidad )
-      context.setCountProducts(context.countProducts + product.cantidad)
-      return context.setAllProducts([...newallProducts]) 
-    };
-
-    context.setTotal(context.total+ product.precio * product.cantidad )
-    context.setCountProducts(context.countProducts + product.cantidad)
-
-    if(context.allProducts.length<6){
-      context.setAllProducts([...context.allProducts, product])
-    }else{
-      alert("No podes agregar mas en esta compra.")
-    }
-  };
-
+  const {addToCart} = useContext(ecommerce_context)
+  
   return (
     <div className="products-container">
     {productos.map((producto) => (

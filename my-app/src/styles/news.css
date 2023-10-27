@@ -24,10 +24,10 @@
     gap: 2rem;
 }
 .new-img-container{
-    width: 30rem;
+    width: 30%;
 }
 .new-info{
-    width: 100%;
+    width: 70%;
 }
 .new-img{
     width: 100%;
@@ -50,7 +50,7 @@ p{
     .new{
         flex-direction: column;
     }
-    .new-img{
+    .new-img-container{
         width: 100%;
     }
 }
