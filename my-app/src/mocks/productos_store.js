@@ -15,22 +15,7 @@ const productos = [
     imagen: "https://www.moov.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dwee544a94/products/ADHK6496/ADHK6496-1.JPG",
     cantidad: 1, 
   },
-  {
-    id: 3,
-    nombre: "Mochila Ñudrop",
-    descripcion: "Mochila de gamusa Ñudrop",
-    precio: 5,
-    imagen: "https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw33bcc709/products/LONAFW231007/LONAFW231007-1.JPG",
-    cantidad: 1, 
-  },
-  {
-    id: 4,
-    nombre: "Mochila Ñudrop",
-    descripcion: "Mochila de tela ñudrop",
-    precio: 15,
-    imagen: "https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw33bcc709/products/LONAFW231007/LONAFW231007-1.JPG",
-    cantidad: 1, 
-  },
+  
   
 ];
 

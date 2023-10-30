@@ -1,32 +1,35 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import productos from '../mocks/productos_store';
 import "../styles/descripcionproducto.css"
+import {ecommerce_context} from "../context/cartContext"
+import GreenBtn from "../components/green-btn"
+
 
 function Descripcionproducto() {
+    const {addToCart} = useContext(ecommerce_context)
+
     const {id} = useParams();
     const productId = parseInt(id); // Convierte el ID de string a número
-
-    console.log(id)
-    console.log(productos)
     const productodetallado = productos.find((el)=> el.id === productId)
     
-    console.log(productodetallado)
-    
-    
-    // if (!productodetallado) {
-    //     return <p className='product-id-descripcion'>Producto no encontrado.</p>;
-    // }
 
     return (
         <div className='products-description-view'>
             <div className="product-description-container">
-                <div class="product--description-image">
+                <div className="product--description-image">
                     <img src={productodetallado.imagen} alt="Imagen del producto"/>
                 </div>
-                <div class="product-descrpition-details">
-                    <h1 className="product-description-name">{productodetallado.nombre}</h1>
-                    <p className="product-description-description">{productodetallado.descripcion}</p>
+                <div className="product-descrpition-details">
+                    <div>
+                        <h1 className="product-description-name">{productodetallado.nombre}</h1>
+                        <p className="product-description-description">{productodetallado.descripcion}</p>
+                    </div>
+                    <div>
+                        <GreenBtn btnContent={<i className="fa-solid fa-cart-plus btn-icon"></i>} onClick={() => addToCart(productodetallado)}/>
+                    </div>
+                    
                 </div>
             </div>
         </div>

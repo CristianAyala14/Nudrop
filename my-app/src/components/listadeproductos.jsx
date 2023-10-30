@@ -3,6 +3,7 @@ import "../styles/listadeproductos.css"
 import productos from "../mocks/productos_store"
 import { Link } from 'react-router-dom';
 import GreenBtn from "../components/green-btn"
+import {getFirestore, getDocs, doc} from "firebase/firestore"
 import {ecommerce_context} from "../context/cartContext"
 
 function ListaDeProductos(){
