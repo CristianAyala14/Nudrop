@@ -1,17 +1,15 @@
 import React, { useContext } from 'react'
 import "../styles/listadeproductos.css"
-import productos from "../mocks/productos_store"
 import { Link } from 'react-router-dom';
 import GreenBtn from "../components/green-btn"
-import {getFirestore, getDocs, doc} from "firebase/firestore"
 import {ecommerce_context} from "../context/cartContext"
 
 function ListaDeProductos(){
-  const {addToCart} = useContext(ecommerce_context)
+  const {addToCart, productosFS} = useContext(ecommerce_context)
   
   return (
     <div className="products-container">
-    {productos.map((producto) => (
+    {productosFS.map((producto) => (
         <article key={producto.id} className='product'>
           <Link to={`/producto/${producto.id}`} key={producto.id} className='product-fromlist'>
             <img className='product-img' src={producto.imagen} alt="" />

@@ -33,7 +33,7 @@ function Navbar( {img, op1, op2, op3, op4 }){
                         <div className="items-added-1">
                             <>
                             {allProducts.map((producto) => (
-                                <article className="item-cart">
+                                <article className="item-cart" key={producto.id}>
                                     <div>
                                         <p>{producto.nombre}</p>
                                         <p>{producto.precio}</p>

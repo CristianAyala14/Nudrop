@@ -1,18 +1,17 @@
 import React from 'react';
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import productos from '../mocks/productos_store';
 import "../styles/descripcionproducto.css"
 import {ecommerce_context} from "../context/cartContext"
 import GreenBtn from "../components/green-btn"
 
 
 function Descripcionproducto() {
-    const {addToCart} = useContext(ecommerce_context)
+    const {addToCart, productosFS} = useContext(ecommerce_context)
 
     const {id} = useParams();
     const productId = parseInt(id); // Convierte el ID de string a número
-    const productodetallado = productos.find((el)=> el.id === productId)
+    const productodetallado = productosFS.find((el)=> el.id === productId)
     
 
     return (
