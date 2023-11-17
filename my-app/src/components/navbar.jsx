@@ -4,16 +4,19 @@ import {  useContext ,useState} from 'react';
 import GreenBtn from "../components/green-btn"
 import Redbtn from './red-btn';
 import {ecommerce_context} from "../context/cartContext"
+import {getFirestore, getDocs, collection, addDoc} from "firebase/firestore"
 
 
 
 function Navbar( {img, op1, op2, op3, op4 }){
-    const {Deletefromcart , total, allProducts, countProducts} = useContext(ecommerce_context)
+    const {Deletefromcart , total, allProducts, countProducts, sentOrder} = useContext(ecommerce_context)
     
     const [Active, setActive] = useState(false);
     const changeActiveState = () => {
         setActive(!Active);
     };
+
+    
 
     return (
         <nav className='nav'>
@@ -52,7 +55,7 @@ function Navbar( {img, op1, op2, op3, op4 }){
                                 <p>${total}</p>
                             </div>
                             <div className="btn-comprar-container">
-                                <GreenBtn btnContent="Comprar"/>
+                                <NavLink className="nav-option" to={`/finalizarcompra`}><GreenBtn btnContent="Comprar" onClick={changeActiveState}/></NavLink>
                             </div>
                         </div>
                     </>

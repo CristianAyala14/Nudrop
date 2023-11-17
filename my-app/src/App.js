@@ -11,6 +11,8 @@ import News from "./Views/News"
 import Media from "./Views/Media"
 import Contact from "./Views/Contact"
 import Store from "./Views/Store"
+import FinalizarCompra from "./Views/finalizarcompra"
+
 import Descripcionproducto from './Views/descripcionproducto';
 //img
 import Imglogo from "./img/nav-logo.jpeg"
@@ -31,6 +33,7 @@ function App() {
             <Route exact path="/Contact" element={<Contact />} />
             <Route exact path="/Store" element={<Store />} />
             <Route path="/producto/:id" element={<Descripcionproducto/>} />
+            <Route path="/finalizarcompra" element={<FinalizarCompra/>} />
           </Routes>
           <Footer/>
         </BrowserRouter>

@@ -1,0 +1,12 @@
+h1{
+    color: white;
+}
+.form-compra{
+    background-color: rgb(54, 56, 54);
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
